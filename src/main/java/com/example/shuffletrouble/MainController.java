@@ -53,22 +53,23 @@ public class MainController implements Initializable {
 
     }
 
-
+    //=====================================================================================================
     //Title card animation
+    //=====================================================================================================
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         TranslateTransition translate1 = new TranslateTransition();
         translate1.setNode(shuffle);
         translate1.setDuration(Duration.millis(1000));
-        translate1.setByX(650);
+        translate1.setByX(670);
         translate1.play();
 
         TranslateTransition translate2 = new TranslateTransition();
         translate2.setNode(trouble);
         translate2.setDuration(Duration.millis(1000));
         translate2.setByX(-250);
-        translate2.setByY(80);
+        translate2.setByY(70);
         translate2.play();
 
     }
