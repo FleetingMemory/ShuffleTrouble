@@ -13,12 +13,7 @@
    <children>
       <Pane cache="true" depthTest="DISABLE" layoutX="-1.0" layoutY="-1.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="400.0" prefWidth="1000.0">
          <children>
-            <ImageView fitHeight="245.0" fitWidth="524.0" layoutX="78.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../shuffle.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="317.0" fitWidth="558.0" layoutX="369.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="trouble" fitHeight="317.0" fitWidth="558.0" layoutX="369.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../trouble.png" />
                </image>
@@ -46,5 +41,10 @@
             <Insets />
          </opaqueInsets>
       </HBox>
+      <ImageView fx:id="shuffle" fitHeight="245.0" fitWidth="524.0" layoutX="-305.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../shuffle.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
