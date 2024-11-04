@@ -14,9 +14,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.util.Pair;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -39,9 +41,19 @@ public class MainController implements Initializable {
     private ImageView trouble;
 
     //Function to direct player to game screen
-    public void switchToGameScreen(ActionEvent event){
+    public void switchToPlayerScreen(ActionEvent event){
         try{
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("GameScene.fxml")));
+
+
+            //==========================================================================================
+
+            //Game data variables
+            Pair<String , Integer> p1= new Pair<>("Roy" , 1200);
+            ArrayList<Pair<String , Integer>> leaderBoard = new ArrayList<>();
+            leaderBoard.add(p1);
+
+            //==========================================================================================
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("PlayerScene.fxml")));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -53,22 +65,23 @@ public class MainController implements Initializable {
 
     }
 
-
+    //=====================================================================================================
     //Title card animation
+    //=====================================================================================================
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         TranslateTransition translate1 = new TranslateTransition();
         translate1.setNode(shuffle);
         translate1.setDuration(Duration.millis(1000));
-        translate1.setByX(650);
+        translate1.setByX(670);
         translate1.play();
 
         TranslateTransition translate2 = new TranslateTransition();
         translate2.setNode(trouble);
         translate2.setDuration(Duration.millis(1000));
         translate2.setByX(-250);
-        translate2.setByY(80);
+        translate2.setByY(70);
         translate2.play();
 
     }

@@ -22,7 +22,7 @@
       </Pane>
       <HBox alignment="CENTER" layoutY="436.0" prefHeight="132.0" prefWidth="1000.0">
          <children>
-            <Button fx:id="playButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToGameScreen" text="Play" textAlignment="JUSTIFY" textFill="#c96b00">
+            <Button fx:id="playButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToPlayerScreen" text="Play" textAlignment="JUSTIFY" textFill="#c96b00">
                <font>
                   <Font size="35.0" />
                </font>
