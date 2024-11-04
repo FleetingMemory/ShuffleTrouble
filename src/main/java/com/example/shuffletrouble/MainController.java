@@ -14,9 +14,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.util.Pair;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -38,10 +40,25 @@ public class MainController implements Initializable {
     @FXML
     private ImageView trouble;
 
+
+
+
+
     //Function to direct player to game screen
-    public void switchToGameScreen(ActionEvent event){
+    public void switchToPlayerScreen(ActionEvent event){
         try{
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("GameScene.fxml")));
+
+
+            //==========================================================================================
+
+            //Game data variables
+//            ArrayList<Pair<String , Integer>> leaderBoard;
+
+            //==========================================================================================
+            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("PlayerScene.fxml")));
+
+
+
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
