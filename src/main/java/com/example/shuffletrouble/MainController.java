@@ -40,10 +40,6 @@ public class MainController implements Initializable {
     @FXML
     private ImageView trouble;
 
-
-
-
-
     //Function to direct player to game screen
     public void switchToPlayerScreen(ActionEvent event){
         try{
@@ -52,12 +48,18 @@ public class MainController implements Initializable {
             //==========================================================================================
 
             //Game data variables
-//            ArrayList<Pair<String , Integer>> leaderBoard;
+            Pair<String , Integer> p1= new Pair<>("Roy" , 1200);
+            ArrayList<Pair<String , Integer>> leaderBoard = new ArrayList<>();
+            leaderBoard.add(p1);
 
             //==========================================================================================
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("PlayerScene.fxml")));
+//            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("PlayerScene.fxml")));
 
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("PlayerScene.fxml"));
+            root = loader.load();
 
+            PlayerController playerController = loader.getController();
+            playerController.manageLeaderboard(leaderBoard);
 
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
