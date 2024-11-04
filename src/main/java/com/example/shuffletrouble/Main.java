@@ -47,7 +47,6 @@ public class Main extends Application {
 
 
     //Function to handle close action
-
     public void exitGame(Stage stage){
 
         System.out.print("exiting");
