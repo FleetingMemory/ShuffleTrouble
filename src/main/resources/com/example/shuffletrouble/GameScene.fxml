@@ -1,11 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@../../../cssStyles/homepage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shuffletrouble.GameScene">
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@../../../cssStyles/homepage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shuffletrouble.GameController">
    <children>
-      <ListView fx:id="myListView" layoutY="-7.0" orientation="HORIZONTAL" prefHeight="300.0" prefWidth="1000.0" />
+      <Label fx:id="timeCounter" layoutX="483.0" layoutY="365.0" text="1" textFill="WHITE">
+         <font>
+            <Font size="66.0" />
+         </font>
+      </Label>
+      <GridPane gridLinesVisible="true" layoutY="7.0" prefHeight="300.0" prefWidth="1000.0">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="993.5999145507812" minWidth="10.0" prefWidth="250.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="993.5999145507812" minWidth="10.0" prefWidth="250.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="993.5999145507812" minWidth="10.0" prefWidth="250.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="806.4000396728516" minWidth="0.0" prefWidth="250.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <ImageView fx:id="joker" fitHeight="300.0" fitWidth="355.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+               <image>
+                  <Image url="@../../../joker.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="ace" fitHeight="300.0" fitWidth="283.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="@../../../ace.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="king" fitHeight="300.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+               <image>
+                  <Image url="@../../../king.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="queen" fitHeight="300.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+               <image>
+                  <Image url="@../../../queen.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </GridPane>
+      <Button fx:id="startButton" layoutX="357.0" layoutY="522.0" mnemonicParsing="false" text="Start Game">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -55,11 +55,11 @@ public class MainController implements Initializable {
             //==========================================================================================
 //            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("PlayerScene.fxml")));
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("PlayerScene.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("GameScene.fxml"));
             root = loader.load();
 
-            PlayerController playerController = loader.getController();
-            playerController.manageLeaderboard(leaderBoard);
+//            PlayerController playerController = loader.getController();
+//            playerController.manageLeaderboard(leaderBoard);
 
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
