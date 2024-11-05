@@ -1,9 +1,12 @@
 package com.example.shuffletrouble;
 
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class PlayerScene extends Application {
@@ -17,7 +20,9 @@ public class PlayerScene extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
 
+
+//         Parent root= FXMLLoader.load((getClass().getResource("PlayerScene.fxml"));
     }
 }
