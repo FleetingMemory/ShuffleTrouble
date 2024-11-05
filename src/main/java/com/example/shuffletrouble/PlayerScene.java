@@ -3,6 +3,7 @@ package com.example.shuffletrouble;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 
@@ -23,6 +24,6 @@ public class PlayerScene extends Application {
     public void start(Stage primaryStage) throws IOException {
 
 
-//         Parent root= FXMLLoader.load((getClass().getResource("PlayerScene.fxml"));
     }
 }
+
