@@ -3,6 +3,8 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -12,30 +14,40 @@
       <Cursor fx:constant="DEFAULT" />
    </cursor>
    <children>
-      <Text fx:id="EnterName" fill="#160202" layoutX="146.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter Name" wrappingWidth="352.13670349121094">
+      <TextField layoutX="149.0" layoutY="186.0" prefHeight="47.0" prefWidth="345.0" style="-fx-background-radius: 15; -fx-background-color: #AFE1AF;">
          <font>
-            <Font name="Bell MT Bold" size="64.0" />
-         </font>
-      </Text>
-      <TextField layoutX="138.0" layoutY="142.0" prefHeight="47.0" prefWidth="345.0">
-         <font>
-            <Font size="24.0" />
+            <Font name="Bell MT Bold" size="24.0" />
          </font>
       </TextField>
-      <Button layoutX="170.0" layoutY="294.0" mnemonicParsing="false" onAction="#switchToGameScreen" prefHeight="43.0" prefWidth="108.0" text="Start" textFill="#dd0a0a">
+      <Button layoutX="170.0" layoutY="294.0" mnemonicParsing="false" onAction="#switchToGameScreen" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Start" textFill="#f41c1c">
          <font>
-            <Font name="Bell MT Bold" size="18.0" />
+            <Font name="Berlin Sans FB Demi Bold" size="24.0" />
          </font>
       </Button>
-      <Button layoutX="337.0" layoutY="295.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="117.0" text="Back" textFill="RED">
+      <Button layoutX="340.0" layoutY="295.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="43.0" prefWidth="108.0" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Back" textFill="#f41c1c">
          <font>
-            <Font size="18.0" />
+            <Font name="Berlin Sans FB Demi Bold" size="24.0" />
          </font>
       </Button>
-      <Text fill="#fa2307" layoutX="392.0" layoutY="512.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shuffle Trouble" wrappingWidth="282.13677978515625">
+      <Text fill="#efaf00" layoutX="149.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter " wrappingWidth="150.93675231933594">
          <font>
-            <Font name="Bell MT Bold" size="36.0" />
+            <Font name="Bauhaus 93" size="64.0" />
          </font>
       </Text>
+      <Text fill="#efaf00" layoutX="322.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="222.13671875">
+         <font>
+            <Font name="Bauhaus 93" size="64.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="shuffle" fitHeight="150.0" fitWidth="200.0" layoutX="495.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../shuffle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="trouble" fitHeight="150.0" fitWidth="200.0" layoutX="704.0" layoutY="596.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../trouble.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
