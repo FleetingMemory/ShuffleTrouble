@@ -38,6 +38,7 @@ public class PlayerController {
             throw new RuntimeException(e);
         }
     }
+        
 
         public void switchToMain (ActionEvent event){
             try {
