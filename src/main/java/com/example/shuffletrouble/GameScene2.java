@@ -2,7 +2,6 @@ package com.example.shuffletrouble;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-public class GameScene2 extends Application{
 
 import static javafx.application.Application.launch;
 
