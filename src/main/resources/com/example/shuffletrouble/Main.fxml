@@ -22,16 +22,16 @@
       </Pane>
       <HBox alignment="CENTER" layoutY="436.0" prefHeight="132.0" prefWidth="1000.0">
          <children>
-            <Button fx:id="playButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToPlayerScreen" text="Play" textAlignment="JUSTIFY" textFill="#c96b00">
+            <Button fx:id="playButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToPlayerScreen" style="-fx-background-radius: 10; -fx-background-color: #023020;" text="Play" textAlignment="JUSTIFY" textFill="#f41c1c">
                <font>
-                  <Font size="35.0" />
+                  <Font name="Britannic Bold" size="35.0" />
                </font>
                <HBox.margin>
                   <Insets right="70.0" />
                </HBox.margin></Button>
-            <Button fx:id="exitButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#exitGame" text="Exit" textAlignment="JUSTIFY" textFill="#ff4444">
+            <Button fx:id="exitButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#exitGame" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Exit" textAlignment="JUSTIFY" textFill="#f41c1c">
                <font>
-                  <Font size="35.0" />
+                  <Font name="Britannic Bold" size="35.0" />
                </font>
                <HBox.margin>
                   <Insets left="70.0" />
