@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -37,7 +38,7 @@
             <ImageView fx:id="card4" fitHeight="300.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
          </children>
       </GridPane>
-      <Button fx:id="startButton" layoutX="358.0" layoutY="515.0" mnemonicParsing="false" onAction="#switchToGameScene2" text="Start Game">
+      <Button fx:id="startButton" layoutX="364.0" layoutY="503.0" mnemonicParsing="false" onAction="#switchToGameScene2" text="Start Game">
          <font>
             <Font size="45.0" />
          </font>
@@ -59,9 +60,9 @@
                </stops>
             </LinearGradient>
          </fill></Rectangle>
-      <Label fx:id="remember" alignment="CENTER" layoutX="223.0" layoutY="549.0" prefWidth="551.0" text="Remember the cards positions" textFill="#383838">
+      <Label fx:id="remember" alignment="CENTER" layoutX="225.0" layoutY="521.0" prefWidth="551.0" text="Remember the cards positions" textFill="#383838">
          <font>
-            <Font name="Microsoft Tai Le" size="40.0" />
+            <Font name="Bodoni MT" size="40.0" />
          </font>
       </Label>
       <Label fx:id="nameLabel" layoutX="511.0" layoutY="407.0" prefHeight="56.0" prefWidth="246.0">
@@ -69,5 +70,15 @@
             <Font name="Britannic Bold" size="24.0" />
          </font>
       </Label>
+      <ImageView fx:id="Shuffle" fitHeight="119.0" fitWidth="200.0" layoutX="572.0" layoutY="591.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../shuffle.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="trouble" fitHeight="150.0" fitWidth="200.0" layoutX="784.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../trouble.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
