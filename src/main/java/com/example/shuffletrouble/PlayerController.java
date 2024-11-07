@@ -7,7 +7,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.util.Pair;
-
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -26,6 +25,7 @@ public class PlayerController {
     //Function to direct player to game screen
     public void switchToGameScreen(ActionEvent event) {
         try {
+
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("GameScene.fxml"));
             root = loader.load();
