@@ -47,6 +47,12 @@ public class GameController implements Initializable {
 
     @FXML
     ImageView card1;
+    @FXML
+    ImageView card2;
+    @FXML
+    ImageView card3;
+    @FXML
+    ImageView card4;
 
 
     Timer timer = new Timer(6);
@@ -62,7 +68,10 @@ public class GameController implements Initializable {
                                 System.out.print("fin");
                                 rectangle.setOpacity(1);
                                 startButton.setOpacity(1);
-                                remember.setOpacity(0);
+
+                                //REMOVING REMEMBER TEXT
+                                remember.setScaleX(0);
+                                remember.setScaleY(0);
                                 return;
                                 
                             }
@@ -76,14 +85,65 @@ public class GameController implements Initializable {
         timeCounter.setText("Readdyyyy?");
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
-
-        rectangle.setOpacity(0);
         startButton.setOpacity(0);
 
 
-        System.out.print(card1.getId());
-        
 
+        //Setting of images in game
+        ArrayList<String> cards = new ArrayList<>();
+        cards.add("ace.jpg");
+        cards.add("king.jpg");
+        cards.add("queen.jpg");
+        cards.add("joker.jpg");
+        int cnt = 1;
+
+
+        ArrayList<String> ansCards = new ArrayList<>();
+
+        //RANDOMLY GENERATE CARDS FOR GAME
+        for (int i = 0 ; i < 4; i++){
+            int min = 0;
+            int max = 3;
+            int range = max - min + 1;
+            int idx = (int) (Math.random() * range) + min;
+            ansCards.add(cards.get(idx));
+            Image img = new Image(cards.get(idx));
+            if(cnt == 1){
+                card1.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 2){
+                card2.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 3){
+                card3.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 4){
+                card4.setImage(img);
+                cnt++;
+            }
+        }
+        GameScene2Controller gameScene2Controller = new GameScene2Controller();
+//        gameScene2Controller.rememberCards(ansCards);
+
+    }
+
+    public void switchToGameScene2(ActionEvent event){
+        try{
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("GameScene2.fxml"));
+            root = loader.load();
+
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }

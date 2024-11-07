@@ -6,6 +6,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class GameScene2Controller {
     private TextField inputField1;  // For Card 1 input
@@ -56,6 +57,11 @@ public class GameScene2Controller {
         // You can perform any action here, e.g., updating game state, changing scene, etc.
         System.out.println("All cards are valid. Proceeding with the game...");
 
+    }
+
+    public void values(ArrayList<String> arr){
+        System.out.print("hi");
+        System.out.print(arr);
     }
 
     // Utility method to show an error message
