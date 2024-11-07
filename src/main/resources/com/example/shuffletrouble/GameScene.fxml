@@ -13,7 +13,6 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-
 <AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@../../../cssStyles/homepage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shuffletrouble.GameController">
    <children>
       <Label fx:id="timeCounter" alignment="CENTER" contentDisplay="CENTER" layoutX="-5.0" layoutY="377.0" prefHeight="100.0" prefWidth="1000.0" text="1" textFill="WHITE">
