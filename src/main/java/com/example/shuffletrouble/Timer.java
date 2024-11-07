@@ -15,7 +15,14 @@ public class Timer {
     }
 
     public void onSecondPassed(){
-        this.seconds--;
+        if(this.seconds == 0) {
+            return;
+        }
+        else {
+            this.seconds--;
+        }
+
+
     }
 
 }

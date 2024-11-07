@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@../../../cssStyles/homepage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shuffletrouble.GameScene2">
+   <children>
+      <Label layoutX="351.0" layoutY="308.0" text="GameScene2">
+         <font>
+            <Font size="56.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
