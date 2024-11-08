@@ -2,6 +2,7 @@ package com.example.shuffletrouble;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,7 +26,10 @@ import java.util.ResourceBundle;
 
 public class GameController implements Initializable {
 
-
+    @FXML
+    private ImageView shuffle;
+    @FXML
+    private ImageView trouble;
 
 
 
@@ -288,6 +292,27 @@ public class GameController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        //translate for shuffle
+        TranslateTransition translate1 = new TranslateTransition();
+        translate1.setNode(shuffle);
+        translate1.setDuration(Duration.millis(300));
+        translate1.setCycleCount(TranslateTransition.INDEFINITE);
+        translate1.setByX(5);
+        translate1.setAutoReverse(true);
+        translate1.play();
+
+        //translate for trouble
+        TranslateTransition translate2= new TranslateTransition();
+        translate2.setNode(trouble);
+        translate2.setDuration(Duration.millis(300));
+        translate2.setCycleCount(TranslateTransition.INDEFINITE);
+        translate2.setByY(5);
+        translate2.setAutoReverse(true);
+        translate2.play();
+
+
+
         timeCounter.setText("Readdyyyy?");
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();

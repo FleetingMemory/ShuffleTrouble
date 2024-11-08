@@ -35,22 +35,22 @@
             <ImageView fx:id="escard4" fitHeight="300.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
          </children>
       </GridPane>
-      <Button fx:id="startButton" layoutX="364.0" layoutY="503.0" mnemonicParsing="false" onAction="#switchToGameScene2" text="Start Game">
+      <Button fx:id="startButton" layoutX="368.0" layoutY="517.0" mnemonicParsing="false" onAction="#switchToGameScene2" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Start Game" textFill="#f41c1c">
          <font>
-            <Font size="45.0" />
+            <Font name="Britannic Bold" size="36.0" />
          </font>
       </Button>
-      <Label fx:id="remember" alignment="CENTER" layoutX="225.0" layoutY="521.0" prefWidth="551.0" text="Remember the cards positions" textFill="#383838">
+      <Label fx:id="remember" alignment="CENTER" layoutX="211.0" layoutY="498.0" prefWidth="551.0" text="Remember the cards positions" textFill="#383838">
          <font>
-            <Font name="Bodoni MT" size="40.0" />
+            <Font name="Bodoni MT" size="36.0" />
          </font>
       </Label>
-      <ImageView fx:id="Shuffle" fitHeight="119.0" fitWidth="200.0" layoutX="572.0" layoutY="591.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="shuffle" fitHeight="119.0" fitWidth="200.0" layoutX="663.0" layoutY="542.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../shuffle.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="trouble" fitHeight="102.0" fitWidth="194.0" layoutX="784.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="trouble" fitHeight="102.0" fitWidth="194.0" layoutX="770.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../trouble.png" />
          </image>

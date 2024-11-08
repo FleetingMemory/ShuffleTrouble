@@ -1,20 +1,33 @@
 package com.example.shuffletrouble;
 
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class GameScene2Controller {
+public class GameScene2Controller  implements Initializable {
+
+    @FXML
+    private ImageView shuffle;
+    @FXML
+    private ImageView trouble;
+
     private TextField inputField1;  // For Card 1 input
     private TextField inputField2;  // For Card 2 input
     private TextField inputField3;  // For Card 3 input
@@ -100,6 +113,29 @@ public class GameScene2Controller {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        //translate for shuffle
+        TranslateTransition translate1 = new TranslateTransition();
+        translate1.setNode(shuffle);
+        translate1.setDuration(Duration.millis(300));
+        translate1.setCycleCount(TranslateTransition.INDEFINITE);
+        translate1.setByX(5);
+        translate1.setAutoReverse(true);
+        translate1.play();
+
+        //translate for trouble
+        TranslateTransition translate2= new TranslateTransition();
+        translate2.setNode(trouble);
+        translate2.setDuration(Duration.millis(300));
+        translate2.setCycleCount(TranslateTransition.INDEFINITE);
+        translate2.setByY(5);
+        translate2.setAutoReverse(true);
+        translate2.play();
+
+
     }
 }
 

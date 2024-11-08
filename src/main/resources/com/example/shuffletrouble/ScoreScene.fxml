@@ -4,8 +4,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@../../../cssStyles/homepage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shuffletrouble.ScoreScene">
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@../../../cssStyles/homepage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.shuffletrouble.ScoreController">
    <children>
       <ImageView fx:id="trouble" fitHeight="150.0" fitWidth="200.0" layoutX="784.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
          <image>
