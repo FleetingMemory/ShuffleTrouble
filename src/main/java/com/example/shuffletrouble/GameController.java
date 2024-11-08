@@ -146,9 +146,9 @@ public class GameController implements Initializable {
         }
 
     }
-
+   @FXML
     Label nameLabel;
-    public void disName(String EnterName){
+    public void nameTOGameScene(String EnterName){
         nameLabel.setText(EnterName);
     }
 
