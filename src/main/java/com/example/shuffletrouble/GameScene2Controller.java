@@ -1,11 +1,17 @@
 package com.example.shuffletrouble;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import javax.swing.*;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class GameScene2Controller {
@@ -72,4 +78,28 @@ public class GameScene2Controller {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
+
+
+
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
+    public void switchToScoreScene (ActionEvent event){
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ScoreScene.fxml"));
+            root = loader.load();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
+

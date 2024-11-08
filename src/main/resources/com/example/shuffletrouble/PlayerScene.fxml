@@ -14,7 +14,7 @@
       <Cursor fx:constant="DEFAULT" />
    </cursor>
    <children>
-      <TextField layoutX="311.0" layoutY="212.0" prefHeight="47.0" prefWidth="345.0" style="-fx-background-radius: 15; -fx-background-color: #AFE1AF;">
+      <TextField fx:id="nameTextFeild" layoutX="352.0" layoutY="212.0" prefHeight="47.0" prefWidth="345.0" style="-fx-background-radius: 15; -fx-background-color: #AFE1AF;">
          <font>
             <Font name="Bell MT Bold" size="24.0" />
          </font>
@@ -29,22 +29,22 @@
             <Font name="Britannic Bold" size="36.0" />
          </font>
       </Button>
-      <Text fill="#a9241a" layoutX="315.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter " wrappingWidth="150.93675231933594">
+      <Text fx:id="nameLabel" fill="#a9241a" layoutX="364.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter " wrappingWidth="150.93675231933594">
          <font>
             <Font name="Britannic Bold" size="64.0" />
          </font>
       </Text>
-      <Text fill="#a9241a" layoutX="476.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="222.13671875">
+      <Text fx:id="nameLabel" fill="#a9241a" layoutX="530.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="222.13671875">
          <font>
             <Font name="Britannic Bold" size="64.0" />
          </font>
       </Text>
-      <ImageView fx:id="shuffle" fitHeight="150.0" fitWidth="200.0" layoutX="600.0" layoutY="519.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="shuffle" fitHeight="150.0" fitWidth="200.0" layoutX="638.0" layoutY="536.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../shuffle.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="trouble" fitHeight="150.0" fitWidth="200.0" layoutX="753.0" layoutY="578.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="trouble" fitHeight="150.0" fitWidth="200.0" layoutX="779.0" layoutY="589.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../trouble.png" />
          </image>
