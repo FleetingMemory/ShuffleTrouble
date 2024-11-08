@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.GridPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -28,10 +29,10 @@ public class GameController implements Initializable {
 
 
 
-    @FXML
-    private Button startButton;
-    @FXML
-    private Label timeCounter;
+
+    //==============================================================================
+    //GAME COMPONENTS VARIABLES
+    //==============================================================================
 
     @FXML
     private Label remember;
@@ -42,17 +43,84 @@ public class GameController implements Initializable {
     private Scene scene;
     @FXML
     private Parent root;
+
+
+    @FXML
+    private GridPane easyGrid;
+
+    @FXML
+    private GridPane medGrid;
+    @FXML
+    private GridPane hardGrid1;
+    @FXML
+    private GridPane hardGrid2;
+
     @FXML
     private Rectangle rectangle;
 
     @FXML
-    ImageView card1;
+    private ImageView escard1;
     @FXML
-    ImageView card2;
+    private ImageView escard2;
     @FXML
-    ImageView card3;
+    private ImageView escard3;
+
     @FXML
-    ImageView card4;
+    private ImageView escard4;
+
+    @FXML
+    private ImageView medcard1;
+
+    @FXML
+    private ImageView medcard2;
+
+    @FXML
+    private ImageView medcard3;
+
+    @FXML
+    private ImageView medcard4;
+
+    @FXML
+    private ImageView medcard5;
+
+    @FXML
+    private ImageView medcard6;
+
+    @FXML
+    private ImageView hardcard1;
+
+    @FXML
+    private ImageView hardcard2;
+
+    @FXML
+    private ImageView hardcard3;
+
+    @FXML
+    private ImageView hardcard4;
+
+    @FXML
+    private ImageView hardcard5;
+
+    @FXML
+    private ImageView hardcard6;
+    @FXML
+    private ImageView hardcard7;
+
+    @FXML
+    private ImageView hardcard8;
+
+
+    @FXML
+    private Label timeCounter;
+
+
+    @FXML
+    private Button startButton;
+
+    //==============================================================================
+    //GAME COMPONENTS VARIABLES
+    //==============================================================================
+
 
 
     Timer timer = new Timer(6);
@@ -79,7 +147,145 @@ public class GameController implements Initializable {
                     )
     );
 
-    
+
+    public ArrayList<String> easyLoad(ArrayList<String> cards){
+        int cnt = 1;
+        medGrid.setScaleX(0);
+        medGrid.setScaleY(0);
+        hardcard1.setScaleX(0);
+        ArrayList<String> ansCards = new ArrayList<>();
+//        easyGrid.setScaleX(1000);
+//        easyGrid.setScaleY(300);
+
+        for (int i = 0 ; i < 4; i++){
+            int min = 0;
+            int max = 3;
+            int range = max - min + 1;
+            int idx = (int) (Math.random() * range) + min;
+            ansCards.add(cards.get(idx));
+            Image img = new Image(cards.get(idx));
+            if(cnt == 1){
+                escard1.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 2){
+                escard2.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 3){
+                escard3.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 4){
+                escard4.setImage(img);
+                cnt++;
+            }
+        }
+
+        return ansCards;
+    }
+
+    public ArrayList<String> medLoad(ArrayList<String> cards){
+        int cnt = 1;
+        easyGrid.setScaleX(0);
+        easyGrid.setScaleY(0);
+        hardGrid1.setScaleX(0);
+        hardGrid2.setScaleX(0);
+        ArrayList<String> ansCards = new ArrayList<>();
+//        easyGrid.setScaleX(1000);
+//        easyGrid.setScaleY(300);
+
+        for (int i = 0 ; i < 6; i++){
+            int min = 0;
+            int max = 3;
+            int range = max - min + 1;
+            int idx = (int) (Math.random() * range) + min;
+            ansCards.add(cards.get(idx));
+            Image img = new Image(cards.get(idx));
+            if(cnt == 1){
+                medcard1.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 2){
+                medcard2.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 3){
+                medcard3.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 4){
+                medcard4.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 5){
+                medcard5.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 6){
+                medcard6.setImage(img);
+                cnt++;
+            }
+        }
+
+        return ansCards;
+    }
+
+    public ArrayList<String> hardLoad(ArrayList<String> cards){
+        int cnt = 1;
+        easyGrid.setScaleX(0);
+        easyGrid.setScaleY(0);
+        medGrid.setScaleX(0);
+        ArrayList<String> ansCards = new ArrayList<>();
+//        easyGrid.setScaleX(1000);
+//        easyGrid.setScaleY(300);
+
+        for (int i = 0 ; i < 8; i++){
+            int min = 0;
+            int max = 3;
+            int range = max - min + 1;
+            int idx = (int) (Math.random() * range) + min;
+            ansCards.add(cards.get(idx));
+            Image img = new Image(cards.get(idx));
+            if(cnt == 1){
+                hardcard1.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 2){
+                hardcard2.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 3){
+                hardcard3.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 4){
+                hardcard4.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 5){
+                hardcard5.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 6){
+                hardcard6.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 7){
+                hardcard7.setImage(img);
+                cnt++;
+            }
+            else if(cnt == 8){
+                hardcard8.setImage(img);
+                cnt++;
+            }
+        }
+
+        return ansCards;
+    }
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         timeCounter.setText("Readdyyyy?");
@@ -87,6 +293,11 @@ public class GameController implements Initializable {
         timeline.play();
         startButton.setOpacity(0);
 
+//        easyGrid.setScaleZ(-1);
+//        easyGrid.setScaleX(0);
+//        easyGrid.setScaleY(0);
+
+        String level = "hard";
 
 
         //Setting of images in game
@@ -98,33 +309,23 @@ public class GameController implements Initializable {
         int cnt = 1;
 
 
-        ArrayList<String> ansCards = new ArrayList<>();
-
         //RANDOMLY GENERATE CARDS FOR GAME
-        for (int i = 0 ; i < 4; i++){
-            int min = 0;
-            int max = 3;
-            int range = max - min + 1;
-            int idx = (int) (Math.random() * range) + min;
-            ansCards.add(cards.get(idx));
-            Image img = new Image(cards.get(idx));
-            if(cnt == 1){
-                card1.setImage(img);
-                cnt++;
-            }
-            else if(cnt == 2){
-                card2.setImage(img);
-                cnt++;
-            }
-            else if(cnt == 3){
-                card3.setImage(img);
-                cnt++;
-            }
-            else if(cnt == 4){
-                card4.setImage(img);
-                cnt++;
-            }
+
+        if(level == "easy") {
+            ArrayList<String> ansCards = easyLoad(cards);
         }
+
+        else if(level == "medium"){
+            ArrayList<String> ansCards = medLoad(cards);
+        }
+        else{
+            ArrayList<String> ansCards = hardLoad(cards);
+        }
+
+
+
+
+        //FOR REMEMBERING CARDS TO THE NEXT SCENE
         GameScene2Controller gameScene2Controller = new GameScene2Controller();
 //        gameScene2Controller.rememberCards(ansCards);
 
