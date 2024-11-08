@@ -8,9 +8,6 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -21,7 +18,7 @@
             <Font size="66.0" />
          </font>
       </Label>
-      <GridPane gridLinesVisible="true" layoutY="7.0" prefHeight="300.0" prefWidth="1000.0">
+      <GridPane fx:id="easyGrid" gridLinesVisible="true" layoutY="7.0" prefHeight="300.0" prefWidth="1000.0">
          <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="993.5999145507812" minWidth="10.0" prefWidth="250.0" />
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="993.5999145507812" minWidth="10.0" prefWidth="250.0" />
@@ -32,10 +29,10 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <ImageView fx:id="card1" fitHeight="300.0" fitWidth="355.0" pickOnBounds="true" preserveRatio="true" smooth="false" />
-            <ImageView fx:id="card2" fitHeight="300.0" fitWidth="283.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
-            <ImageView fx:id="card3" fitHeight="300.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
-            <ImageView fx:id="card4" fitHeight="300.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
+            <ImageView fx:id="escard1" fitHeight="300.0" fitWidth="355.0" pickOnBounds="true" preserveRatio="true" smooth="false" />
+            <ImageView fx:id="escard2" fitHeight="300.0" fitWidth="283.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
+            <ImageView fx:id="escard3" fitHeight="300.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" />
+            <ImageView fx:id="escard4" fitHeight="300.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" />
          </children>
       </GridPane>
       <Button fx:id="startButton" layoutX="364.0" layoutY="503.0" mnemonicParsing="false" onAction="#switchToGameScene2" text="Start Game">
@@ -43,31 +40,9 @@
             <Font size="45.0" />
          </font>
       </Button>
-      <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" height="350.0" opacity="0.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1000.0">
-         <fill>
-            <LinearGradient endX="1.0" endY="1.0" startX="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color red="1.0" green="0.6738578677177429" />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color red="1.0" green="0.8284264206886292" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </fill></Rectangle>
       <Label fx:id="remember" alignment="CENTER" layoutX="225.0" layoutY="521.0" prefWidth="551.0" text="Remember the cards positions" textFill="#383838">
          <font>
             <Font name="Bodoni MT" size="40.0" />
-         </font>
-      </Label>
-      <Label fx:id="nameLabel" layoutX="511.0" layoutY="407.0" prefHeight="56.0" prefWidth="246.0">
-         <font>
-            <Font name="Britannic Bold" size="24.0" />
          </font>
       </Label>
       <ImageView fx:id="Shuffle" fitHeight="119.0" fitWidth="200.0" layoutX="572.0" layoutY="591.0" pickOnBounds="true" preserveRatio="true">
@@ -75,10 +50,71 @@
             <Image url="@../../../shuffle.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="trouble" fitHeight="150.0" fitWidth="200.0" layoutX="784.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="trouble" fitHeight="102.0" fitWidth="194.0" layoutX="784.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../trouble.png" />
          </image>
       </ImageView>
+      <GridPane fx:id="medGrid" alignment="CENTER" gridLinesVisible="true" layoutY="7.0" prefHeight="200.0" prefWidth="1000.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.60000610351562" minWidth="10.0" prefWidth="150.7333221435547" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.60000610351562" minWidth="10.0" prefWidth="175.7333435058594" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.26663360595705" minWidth="10.0" prefWidth="173.8666564941406" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="247.46669921875002" minWidth="10.0" prefWidth="173.6666748046875" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="242.59995117187498" minWidth="10.0" prefWidth="173.93332519531248" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.86665039062495" minWidth="10.0" prefWidth="154.93331298828127" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="medcard1" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="medcard2" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="medcard3" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="medcard4" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="medcard5" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="medcard6" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="hardGrid1" layoutX="5.0" layoutY="4.0" prefHeight="200.0" prefWidth="1000.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="hardcard1" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="hardcard2" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="hardcard3" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="hardcard4" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="hardcard5" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="hardcard6" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+         </children>
+      </GridPane>
+      <GridPane fx:id="hardGrid2" layoutX="2.0" layoutY="227.0" prefHeight="200.0" prefWidth="1000.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fx:id="hardcard7" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <ImageView fx:id="hardcard8" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+         </children>
+      </GridPane>
+      <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="490.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="1000.0" />
+      <Rectangle fx:id="rectangle1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="490.0" layoutX="10.0" layoutY="10.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="1000.0" />
    </children>
 </AnchorPane>
