@@ -125,8 +125,6 @@ public class GameController implements Initializable {
     //GAME COMPONENTS VARIABLES
     //==============================================================================
 
-
-    public String level;
     Timer timer = new Timer(6);
 
     Timeline timeline = new Timeline(
@@ -162,7 +160,7 @@ public class GameController implements Initializable {
 
         for (int i = 0 ; i < 4; i++){
             int min = 0;
-            int max = 3;
+            int max = 6;
             int range = max - min + 1;
             int idx = (int) (Math.random() * range) + min;
             ansCards.add(cards.get(idx));
@@ -200,7 +198,7 @@ public class GameController implements Initializable {
 
         for (int i = 0 ; i < 6; i++){
             int min = 0;
-            int max = 3;
+            int max = 6;
             int range = max - min + 1;
             int idx = (int) (Math.random() * range) + min;
             ansCards.add(cards.get(idx));
@@ -245,7 +243,7 @@ public class GameController implements Initializable {
 
         for (int i = 0 ; i < 8; i++){
             int min = 0;
-            int max = 3;
+            int max = 6;
             int range = max - min + 1;
             int idx = (int) (Math.random() * range) + min;
             ansCards.add(cards.get(idx));
@@ -287,17 +285,49 @@ public class GameController implements Initializable {
         return ansCards;
     }
 
-    public void setLevel(String curLevel){
-        level = curLevel;
+    public String level = "easy";
+    public void setLevel(String L){
+        level = L;
     }
 
-
+    ArrayList<String> ansCards;
 
 
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        timeCounter.setText("Readdyyyy?");
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+        startButton.setOpacity(0);
+
+        //Setting of images in game
+        ArrayList<String> cards = new ArrayList<>();
+        cards.add("ace.jpg");
+        cards.add("king.jpg");
+        cards.add("queen.jpg");
+        cards.add("joker.jpg");
+        cards.add("seven.jpg");
+        cards.add("six.jpg");
+        cards.add("two.jpg");
+        int cnt = 1;
+
+
+        //RANDOMLY GENERATE CARDS FOR GAME
+        System.out.print(level);
+
+        if(level == "easy") {
+            ansCards = easyLoad(cards);
+        }
+
+        else if(level == "medium"){
+            ansCards = medLoad(cards);
+        }
+        else{
+            ansCards = hardLoad(cards);
+        }
 
         //translate for shuffle
         TranslateTransition translate1 = new TranslateTransition();
@@ -319,46 +349,8 @@ public class GameController implements Initializable {
 
 
 
-        timeCounter.setText("Readdyyyy?");
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
-        startButton.setOpacity(0);
-
-//        easyGrid.setScaleZ(-1);
-//        easyGrid.setScaleX(0);
-//        easyGrid.setScaleY(0);
-
-
-        //Setting of images in game
-        ArrayList<String> cards = new ArrayList<>();
-        cards.add("ace.jpg");
-        cards.add("king.jpg");
-        cards.add("queen.jpg");
-        cards.add("joker.jpg");
-        int cnt = 1;
-
-
-        //RANDOMLY GENERATE CARDS FOR GAME
-
-        System.out.print(level);
-
-        if(level == "easy") {
-            ArrayList<String> ansCards = easyLoad(cards);
-        }
-
-        else if(level == "medium"){
-            ArrayList<String> ansCards = medLoad(cards);
-        }
-        else{
-            ArrayList<String> ansCards = hardLoad(cards);
-        }
-
-
-
-
         //FOR REMEMBERING CARDS TO THE NEXT SCENE
-        GameScene2Controller gameScene2Controller = new GameScene2Controller();
-//        gameScene2Controller.rememberCards(ansCards);
+
 
     }
 
@@ -367,6 +359,8 @@ public class GameController implements Initializable {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("GameScene2.fxml"));
             root = loader.load();
+            ScoreController scoreController = new ScoreController();
+            scoreController.setQuestionCards(ansCards);
 
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);

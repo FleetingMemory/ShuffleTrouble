@@ -1,80 +1,39 @@
 package com.example.shuffletrouble;
 
 import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ScoreController  implements Initializable {
-
-
-    @FXML
-    private Stage stage;
-    @FXML
-    private Scene scene;
-    @FXML
-    private Parent root;
 
     @FXML
     private ImageView shuffle;
     @FXML
     private ImageView trouble;
-    @FXML
-    private Label playerName;
 
     public String username = " ";
+    ArrayList<String> questionCards;
 
-    public void getPlayerName(String userName){
-        username =  userName;
+    public void getPlayerName(String playerName){
+        username =  playerName;
         System.out.print(username);
     }
 
-   // Function to direct player to Main screen
-    public void switchToMain(ActionEvent event) {
-        try {
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Main.fxml"));
-            root = loader.load();
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public void setQuestionCards(ArrayList<String> ques){
+        questionCards = ques;
+        System.out.print("ques->" + questionCards);
     }
 
-     // Function to direct player to player screen
-    public void switchToPlayerScene(ActionEvent event) {
-        try {
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("PlayerScene.fxml"));
-            root = loader.load();
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public void setAnswerCards(ArrayList<String> ans){
+//        questionCards = ques;
+//        System.out.print("ques->" + questionCards);
     }
-
 
 
 
@@ -100,6 +59,4 @@ public class ScoreController  implements Initializable {
         translate2.play();
 
     }
-
-
 }
