@@ -41,8 +41,12 @@ public class Main extends Application {
         primaryStage.setScene(scene);
 
 
+        //Setting up game title
+        primaryStage.setTitle("SHUFFLE TROUBLE..");
+
+
         //Setting up custom game icon
-        Image icon = new Image("cardgameicon.jpg");
+        Image icon = new Image("gameiconnew.jpg");
         primaryStage.getIcons().add(icon);
 
 

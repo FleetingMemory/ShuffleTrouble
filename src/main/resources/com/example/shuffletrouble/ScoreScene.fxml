@@ -18,12 +18,12 @@
             <Image url="@../../../shuffle.png" />
          </image>
       </ImageView>
-      <Button fx:id="exit" layoutX="518.0" layoutY="357.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="51.0" prefWidth="143.0" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Exit" textFill="#f41c1c">
+      <Button fx:id="playagain" layoutX="316.0" layoutY="337.0" mnemonicParsing="false" onAction="#switchToPlayerScene" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Play Again" textFill="#f41c1c">
          <font>
             <Font name="Britannic Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="playagain" layoutX="295.0" layoutY="357.0" mnemonicParsing="false" onAction="#switchToPlayerScene" prefHeight="51.0" prefWidth="143.0" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Play Again" textFill="#f41c1c">
+      <Button fx:id="main" layoutX="560.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="50.0" prefWidth="150.0" style="-fx-background-radius: 10; -fx-background-color: #023020;" text="Exit" textFill="#f41c1c">
          <font>
             <Font name="Britannic Bold" size="24.0" />
          </font>

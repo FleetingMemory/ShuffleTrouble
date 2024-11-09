@@ -58,7 +58,7 @@ public class PlayerController  implements  Initializable{
     private ChoiceBox<String> level;
 
 
-    private String[] levels = {"Easy" , "Medium" , "Hard"};
+    private String[] levels = {"Easy" };
 
 
     public void validityCheck(ActionEvent event) {
@@ -69,8 +69,7 @@ public class PlayerController  implements  Initializable{
             wrong.setOpacity(1);
 
         } else {
-            ScoreController scoreController = new ScoreController();
-            scoreController.getPlayerName(username);
+
             switchToGameScreen(event);
         }
     }

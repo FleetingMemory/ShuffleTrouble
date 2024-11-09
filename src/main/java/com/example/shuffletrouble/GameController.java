@@ -329,6 +329,7 @@ public class GameController implements Initializable {
             ansCards = hardLoad(cards);
         }
 
+
         //translate for shuffle
         TranslateTransition translate1 = new TranslateTransition();
         translate1.setNode(shuffle);
@@ -349,6 +350,7 @@ public class GameController implements Initializable {
 
 
 
+
         //FOR REMEMBERING CARDS TO THE NEXT SCENE
 
 
@@ -359,13 +361,14 @@ public class GameController implements Initializable {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("GameScene2.fxml"));
             root = loader.load();
-            ScoreController scoreController = new ScoreController();
-            scoreController.setQuestionCards(ansCards);
+
 
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+            ScoreController scoreController = new ScoreController();
+            scoreController.setQuestionCards(ansCards);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
