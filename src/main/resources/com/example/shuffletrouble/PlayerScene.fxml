@@ -22,12 +22,12 @@
             <Font name="Bell MT Bold" size="24.0" />
          </font>
       </TextField>
-      <Button fx:id="start" layoutX="347.0" layoutY="282.0" mnemonicParsing="false" onAction="#validityCheck" prefHeight="60.0" prefWidth="158.0" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Start" textFill="#f41c1c">
+      <Button fx:id="start" layoutX="358.0" layoutY="380.0" mnemonicParsing="false" onAction="#validityCheck" prefHeight="60.0" prefWidth="158.0" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Start" textFill="#f41c1c">
          <font>
             <Font name="Britannic Bold" size="36.0" />
          </font>
       </Button>
-      <Button fx:id="back" layoutX="567.0" layoutY="281.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="60.0" prefWidth="158.0" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Back" textFill="#f41c1c">
+      <Button fx:id="back" layoutX="559.0" layoutY="380.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="60.0" prefWidth="158.0" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Back" textFill="#f41c1c">
          <font>
             <Font name="Britannic Bold" size="36.0" />
          </font>
@@ -42,19 +42,19 @@
             <Image url="@../../../trouble.png" />
          </image>
       </ImageView>
-      <Label fx:id="EnterName" layoutX="348.0" layoutY="45.0" prefHeight="66.0" prefWidth="346.0" text="Enter Name" textFill="#a9241a">
+      <Label fx:id="EnterName" layoutX="378.0" layoutY="119.0" prefHeight="66.0" prefWidth="346.0" text="Enter Name" textFill="#a9241a">
          <font>
             <Font name="Britannic Bold" size="64.0" />
          </font>
       </Label>
       <Rectangle fx:id="wrong" arcHeight="10.0" arcWidth="5.0" fill="RED" height="8.0" layoutX="350.0" layoutY="246.0" opacity="0.0" stroke="RED" strokeType="INSIDE" width="367.0" />
-      <ChoiceBox fx:id="level" layoutX="466.0" layoutY="376.0" prefHeight="51.0" prefWidth="260.0" style="-fx-background-radius: 10;">
+      <ChoiceBox fx:id="level" layoutX="527.0" layoutY="288.0" prefHeight="34.0" prefWidth="110.0" style="-fx-background-radius: 10;">
          <effect>
             <DropShadow />
          </effect></ChoiceBox>
-      <Label layoutX="345.0" layoutY="372.0" text="Level- ">
+      <Label layoutX="400.0" layoutY="284.0" text="Level - " textFill="#a9241a">
          <font>
-            <Font size="41.0" />
+            <Font name="Britannic Bold" size="41.0" />
          </font>
       </Label>
    </children>

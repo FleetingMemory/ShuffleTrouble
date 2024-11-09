@@ -69,8 +69,7 @@ public class PlayerController  implements  Initializable{
             wrong.setOpacity(1);
 
         } else {
-            ScoreController scoreController = new ScoreController();
-            scoreController.getPlayerName(username);
+
             switchToGameScreen(event);
         }
     }

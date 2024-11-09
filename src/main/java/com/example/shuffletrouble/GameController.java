@@ -359,8 +359,8 @@ public class GameController implements Initializable {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("GameScene2.fxml"));
             root = loader.load();
-            ScoreController scoreController = new ScoreController();
-            scoreController.setQuestionCards(ansCards);
+           // ScoreController scoreController = new ScoreController();
+         //   scoreController.setQuestionCards(ansCards);
 
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
