@@ -75,6 +75,11 @@ public class PlayerController  implements  Initializable{
     }
 
 
+
+
+
+
+
     //Function to direct player to game screen
     public void switchToGameScreen(ActionEvent event) {
         try {
@@ -103,7 +108,7 @@ public class PlayerController  implements  Initializable{
 
     }
 
-
+     // Function to direct player to Main screen
     public void switchToMain(ActionEvent event) {
         try {
 
@@ -119,6 +124,8 @@ public class PlayerController  implements  Initializable{
             throw new RuntimeException(e);
         }
     }
+
+
 
 
 

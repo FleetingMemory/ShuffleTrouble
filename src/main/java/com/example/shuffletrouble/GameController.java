@@ -375,12 +375,12 @@ public class GameController implements Initializable {
         }
 
     }
-   @FXML
-    Label nameLabel;
-    public void nameTOGameScene(String EnterName){
-        nameLabel.setText(EnterName);
-    }
 
+    @FXML
+    Label namelabel;
+    public void setToscoreScene(String username){
+        namelabel.setText(username);
+    }
 
 
 

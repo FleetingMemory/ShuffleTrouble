@@ -27,6 +27,7 @@
             <Font name="Britannic Bold" size="36.0" />
          </font>
       </Button>
+
       <Button fx:id="back" layoutX="559.0" layoutY="380.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="60.0" prefWidth="158.0" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Back" textFill="#f41c1c">
          <font>
             <Font name="Britannic Bold" size="36.0" />
