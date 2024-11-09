@@ -126,7 +126,7 @@ public class GameController implements Initializable {
     //==============================================================================
 
 
-
+    public String level;
     Timer timer = new Timer(6);
 
     Timeline timeline = new Timeline(
@@ -144,7 +144,6 @@ public class GameController implements Initializable {
                                 //REMOVING REMEMBER TEXT
                                 remember.setScaleX(0);
                                 remember.setScaleY(0);
-                                return;
                                 
                             }
                         }
@@ -288,6 +287,13 @@ public class GameController implements Initializable {
         return ansCards;
     }
 
+    public void setLevel(String curLevel){
+        level = curLevel;
+    }
+
+
+
+
 
 
     @Override
@@ -322,8 +328,6 @@ public class GameController implements Initializable {
 //        easyGrid.setScaleX(0);
 //        easyGrid.setScaleY(0);
 
-        String level = "hard";
-
 
         //Setting of images in game
         ArrayList<String> cards = new ArrayList<>();
@@ -335,6 +339,8 @@ public class GameController implements Initializable {
 
 
         //RANDOMLY GENERATE CARDS FOR GAME
+
+        System.out.print(level);
 
         if(level == "easy") {
             ArrayList<String> ansCards = easyLoad(cards);

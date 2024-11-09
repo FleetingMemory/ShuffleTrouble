@@ -2,8 +2,10 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,17 +17,17 @@
       <Cursor fx:constant="DEFAULT" />
    </cursor>
    <children>
-      <TextField fx:id="textInput" layoutX="312.0" layoutY="277.0" prefHeight="47.0" prefWidth="383.0" style="-fx-background-radius: 15; -fx-background-color: #AFE1AF;">
+      <TextField fx:id="textInput" layoutX="342.0" layoutY="203.0" prefHeight="47.0" prefWidth="383.0" style="-fx-background-radius: 15; -fx-background-color: #AFE1AF;">
          <font>
             <Font name="Bell MT Bold" size="24.0" />
          </font>
       </TextField>
-      <Button fx:id="start" layoutX="323.0" layoutY="392.0" mnemonicParsing="false" onAction="#validityCheck" prefHeight="60.0" prefWidth="158.0" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Start" textFill="#f41c1c">
+      <Button fx:id="start" layoutX="347.0" layoutY="282.0" mnemonicParsing="false" onAction="#validityCheck" prefHeight="60.0" prefWidth="158.0" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Start" textFill="#f41c1c">
          <font>
             <Font name="Britannic Bold" size="36.0" />
          </font>
       </Button>
-      <Button fx:id="back" layoutX="539.0" layoutY="392.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="60.0" prefWidth="158.0" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Back" textFill="#f41c1c">
+      <Button fx:id="back" layoutX="567.0" layoutY="281.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="60.0" prefWidth="158.0" style="-fx-background-color: #023020; -fx-background-radius: 10;" text="Back" textFill="#f41c1c">
          <font>
             <Font name="Britannic Bold" size="36.0" />
          </font>
@@ -40,11 +42,20 @@
             <Image url="@../../../trouble.png" />
          </image>
       </ImageView>
-      <Label fx:id="EnterName" layoutX="343.0" layoutY="172.0" prefHeight="66.0" prefWidth="346.0" text="Enter Name" textFill="#a9241a">
+      <Label fx:id="EnterName" layoutX="348.0" layoutY="45.0" prefHeight="66.0" prefWidth="346.0" text="Enter Name" textFill="#a9241a">
          <font>
             <Font name="Britannic Bold" size="64.0" />
          </font>
       </Label>
-      <Rectangle fx:id="wrong" arcHeight="10.0" arcWidth="5.0" fill="RED" height="5.0" layoutX="312.0" layoutY="322.0" opacity="0.0" stroke="RED" strokeType="INSIDE" width="383.0" />
+      <Rectangle fx:id="wrong" arcHeight="10.0" arcWidth="5.0" fill="RED" height="8.0" layoutX="350.0" layoutY="246.0" opacity="0.0" stroke="RED" strokeType="INSIDE" width="367.0" />
+      <ChoiceBox fx:id="level" layoutX="466.0" layoutY="376.0" prefHeight="51.0" prefWidth="260.0" style="-fx-background-radius: 10;">
+         <effect>
+            <DropShadow />
+         </effect></ChoiceBox>
+      <Label layoutX="345.0" layoutY="372.0" text="Level- ">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

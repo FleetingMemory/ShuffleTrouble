@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.image.Image;
@@ -44,15 +45,26 @@ public class PlayerController  implements  Initializable{
         System.out.print(leaderboard);
     }
 
-
+    @FXML
     private Stage stage;
+    @FXML
     private Scene scene;
+    @FXML
     private Parent root;
+
+
+    //LEVEL HANDLER
+    @FXML
+    private ChoiceBox<String> level;
+
+
+    private String[] levels = {"Easy" , "Medium" , "Hard"};
 
 
     public void validityCheck(ActionEvent event) {
         String username = textInput.getText();
-        if (username.length() == 0 || username.length() > 20) {
+        String selectedLevel = level.getValue();
+        if (username.length() == 0 || username.length() > 20 || selectedLevel == null) {
             System.out.print("wrong");
             wrong.setOpacity(1);
 
@@ -73,6 +85,10 @@ public class PlayerController  implements  Initializable{
 
 
             root = loader.load();
+
+            GameController gameController = loader.getController();
+            gameController.setLevel(String.valueOf(level));
+
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -110,6 +126,14 @@ public class PlayerController  implements  Initializable{
         // Animation adding to Shuffle trouble
         @Override
         public void initialize(URL url, ResourceBundle resourceBundle) {
+            level.getItems().addAll(levels);
+
+
+
+
+
+
+
             //translate for shuffle
             TranslateTransition translate1 = new TranslateTransition();
             translate1.setNode(shuffle);
