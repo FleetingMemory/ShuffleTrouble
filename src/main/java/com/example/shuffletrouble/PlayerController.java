@@ -86,8 +86,11 @@ public class PlayerController  implements  Initializable{
 
             root = loader.load();
 
+            String choice = level.getValue().toLowerCase();
+
             GameController gameController = loader.getController();
-            gameController.setLevel(String.valueOf(level));
+            gameController.setLevel(choice);
+
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);

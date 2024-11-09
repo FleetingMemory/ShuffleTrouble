@@ -7,6 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ScoreController  implements Initializable {
@@ -17,11 +18,24 @@ public class ScoreController  implements Initializable {
     private ImageView trouble;
 
     public String username = " ";
+    ArrayList<String> questionCards;
 
     public void getPlayerName(String playerName){
         username =  playerName;
         System.out.print(username);
     }
+
+    public void setQuestionCards(ArrayList<String> ques){
+        questionCards = ques;
+        System.out.print("ques->" + questionCards);
+    }
+
+    public void setAnswerCards(ArrayList<String> ans){
+//        questionCards = ques;
+//        System.out.print("ques->" + questionCards);
+    }
+
+
 
 
     @Override
