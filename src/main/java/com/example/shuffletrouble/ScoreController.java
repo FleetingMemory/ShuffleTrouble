@@ -14,7 +14,9 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ScoreController  implements Initializable {
@@ -42,6 +44,12 @@ public class ScoreController  implements Initializable {
 //        }
 
         // Function to direct player to Main screen
+
+        ArrayList<String> quesCards;
+        public void setQuestionCards(ArrayList<String> ques){
+            quesCards = ques;
+            System.out.print(quesCards);
+        }
         public void switchToMain(ActionEvent event) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("Main.fxml"));
