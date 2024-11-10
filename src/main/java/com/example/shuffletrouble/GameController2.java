@@ -102,17 +102,11 @@ public class GameController2 implements Initializable {
             ScoreCal scoreCal = loader.getController();
             scoreCal.setAnswerCards(answerCards);
 
-
-//            ArrayList<String> qq = new ArrayList<>();
-//            answerCards.add(ques.get(0));
-//            answerCards.add(ques.get(1));
-//            answerCards.add(ques.get(2));
-//            answerCards.add(ques.get(3));
-
             System.out.println("to score"+ques);
 
-
+            //Data transmitted to Score Scene
             scoreCal.scoreController(answerCards , ques);
+            scoreCal.displayUsername(name);
 
 
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
@@ -139,6 +133,11 @@ public class GameController2 implements Initializable {
         alert.showAndWait();
     }
 
+    String name;
+    public void displayNameInScore(String username){
+        name = username;
+
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

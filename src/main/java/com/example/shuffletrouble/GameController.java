@@ -128,7 +128,7 @@ public class GameController implements Initializable {
     Timer timer = new Timer(6);
 
     Timeline timeline = new Timeline(
-            new KeyFrame(Duration.seconds(1) ,
+            new KeyFrame(Duration.millis(700) ,
                         e -> {
                                 timer.onSecondPassed();
 
@@ -381,6 +381,7 @@ public class GameController implements Initializable {
 
             GameController2 gameController2 = loader.getController();
             gameController2.setQuestionCards(ansCards);
+            gameController2.displayNameInScore(nameLabel);
 
 
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -396,10 +397,9 @@ public class GameController implements Initializable {
 
     }
 
-    @FXML
-    Label namelabel;
-    public void setToscoreScene(String username){
-        namelabel.setText(username);
+    String nameLabel;
+    public  void playerName(String username){
+        nameLabel = username;
     }
 
 

@@ -81,6 +81,10 @@ public class ScoreCal implements Initializable {
         }
     }
 
+    public void displayUsername(String username){
+        playerName.setText(username);
+    }
+
     public void scoreController(ArrayList<String> answerCards , ArrayList<String> quesCards) {
         int count = 0;
         for (int i = 0; i < 4; i++){

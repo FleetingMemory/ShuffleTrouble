@@ -58,7 +58,7 @@ public class PlayerController  implements  Initializable{
     private ChoiceBox<String> level;
 
 
-    private String[] levels = {"Easy" };
+    private String[] levels = {"easy" , "medium" , "hard"};
 
 
     public void validityCheck(ActionEvent event) {
@@ -70,7 +70,8 @@ public class PlayerController  implements  Initializable{
 
         } else {
 
-            switchToGameScreen(event);
+            switchToGameScreen(event , username);
+
         }
     }
 
@@ -81,7 +82,7 @@ public class PlayerController  implements  Initializable{
 
 
     //Function to direct player to game screen
-    public void switchToGameScreen(ActionEvent event) {
+    public void switchToGameScreen(ActionEvent event , String username) {
         try {
 
 
@@ -93,7 +94,10 @@ public class PlayerController  implements  Initializable{
             String choice = level.getValue().toLowerCase();
 
             GameController gameController = loader.getController();
+
+            //Data transmitted to gamecontroller
             gameController.setLevel(choice);
+            gameController.playerName(username);
 
 
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
