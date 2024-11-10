@@ -4,6 +4,7 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class ScoreCal {
+public class ScoreCal implements Initializable {
 
     @FXML
     private Stage stage;
@@ -96,5 +97,26 @@ public class ScoreCal {
 
         score.setText(Integer.toString(count));
 
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        //translate for shuffle
+        TranslateTransition translate1 = new TranslateTransition();
+        translate1.setNode(shuffle);
+        translate1.setDuration(Duration.millis(300));
+        translate1.setCycleCount(TranslateTransition.INDEFINITE);
+        translate1.setByX(5);
+        translate1.setAutoReverse(true);
+        translate1.play();
+
+        //translate for trouble
+        TranslateTransition translate2= new TranslateTransition();
+        translate2.setNode(trouble);
+        translate2.setDuration(Duration.millis(300));
+        translate2.setCycleCount(TranslateTransition.INDEFINITE);
+        translate2.setByY(5);
+        translate2.setAutoReverse(true);
+        translate2.play();
     }
 }
