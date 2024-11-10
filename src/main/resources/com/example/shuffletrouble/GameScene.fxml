@@ -115,6 +115,5 @@
          </children>
       </GridPane>
       <Rectangle fx:id="rectangle" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="490.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="1000.0" />
-      <Rectangle fx:id="rectangle1" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="490.0" layoutX="10.0" layoutY="10.0" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="1000.0" />
    </children>
 </AnchorPane>

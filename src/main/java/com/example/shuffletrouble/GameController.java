@@ -2,7 +2,6 @@ package com.example.shuffletrouble;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -135,14 +134,13 @@ public class GameController implements Initializable {
                                 timeCounter.setText(timer.getSeconds());
 
                             if(Integer.parseInt(timer.getSeconds()) == 0) {
-                                System.out.print("fin");
                                 rectangle.setOpacity(1);
                                 startButton.setOpacity(1);
 
                                 //REMOVING REMEMBER TEXT
                                 remember.setScaleX(0);
                                 remember.setScaleY(0);
-                                
+
                             }
                         }
                     )
@@ -292,6 +290,10 @@ public class GameController implements Initializable {
 
     ArrayList<String> ansCards;
 
+    public ArrayList<String> returnQuestionCards(){
+        return ansCards;
+    }
+
 
 
 
@@ -329,24 +331,38 @@ public class GameController implements Initializable {
             ansCards = hardLoad(cards);
         }
 
+//        ScoreController scoreController = new ScoreController();
+//        scoreController.setQuestionCards(ansCards);
+
+
+//        ScoreCal scoreCal = new ScoreCal();
+//        scoreCal.setQuestionCards(ansCards);
+
+//        GameScene2Controller gameScene2Controller = new GameScene2Controller();
+//        gameScene2Controller.setQuestionCards(ansCards);
+
+
+
+
+
 
         //translate for shuffle
-        TranslateTransition translate1 = new TranslateTransition();
-        translate1.setNode(shuffle);
-        translate1.setDuration(Duration.millis(300));
-        translate1.setCycleCount(TranslateTransition.INDEFINITE);
-        translate1.setByX(5);
-        translate1.setAutoReverse(true);
-        translate1.play();
-
-        //translate for trouble
-        TranslateTransition translate2= new TranslateTransition();
-        translate2.setNode(trouble);
-        translate2.setDuration(Duration.millis(300));
-        translate2.setCycleCount(TranslateTransition.INDEFINITE);
-        translate2.setByY(5);
-        translate2.setAutoReverse(true);
-        translate2.play();
+//        TranslateTransition translate1 = new TranslateTransition();
+//        translate1.setNode(shuffle);
+//        translate1.setDuration(Duration.millis(300));
+//        translate1.setCycleCount(TranslateTransition.INDEFINITE);
+//        translate1.setByX(5);
+//        translate1.setAutoReverse(true);
+//        translate1.play();
+//
+//        //translate for trouble
+//        TranslateTransition translate2= new TranslateTransition();
+//        translate2.setNode(trouble);
+//        translate2.setDuration(Duration.millis(300));
+//        translate2.setCycleCount(TranslateTransition.INDEFINITE);
+//        translate2.setByY(5);
+//        translate2.setAutoReverse(true);
+//        translate2.play();
 
 
 
@@ -361,6 +377,9 @@ public class GameController implements Initializable {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("GameScene2.fxml"));
             root = loader.load();
+
+            GameController2 gameController2 = loader.getController();
+            gameController2.setQuestionCards(ansCards);
 
 
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
