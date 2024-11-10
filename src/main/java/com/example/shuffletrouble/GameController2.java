@@ -62,23 +62,23 @@ public class GameController2 implements Initializable {
 
         // Validate each input
         if (!isValidCard(card1input)) {
-            showError("This not for card 1.");
+            showError("Input 1 is not a card name");
             System.out.println(card1input);
             return; // Stop further processing if validation fails
         }
         if (!isValidCard(card2input)) {
-            showError("This is not for card 2.");
+            showError("Input 2 is not a card name");
             System.out.println(card2input);
             return;
 
         }
         if (!isValidCard(card3input)) {
-            showError("This is not for card 3.");
+            showError("Input 3 is not a card name");
             System.out.println(card3input);
             return;
         }
         if (!isValidCard(card4input)) {
-            showError("This is not for card 4.");
+            showError("Input 4 is not a card name");
             System.out.println(card4input);
             return;
         }
