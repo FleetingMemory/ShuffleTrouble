@@ -24,19 +24,24 @@
             <Font name="Britannic Bold" size="24.0" />
          </font>
       </Button>
-      <Button fx:id="main" layoutX="560.0" layoutY="336.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="50.0" prefWidth="150.0" style="-fx-background-radius: 10; -fx-background-color: #023020;" text="Exit" textFill="#f41c1c">
+      <Button fx:id="main" layoutX="538.0" layoutY="337.0" mnemonicParsing="false" onAction="#switchToMain" prefHeight="50.0" prefWidth="150.0" style="-fx-background-radius: 10; -fx-background-color: #023020;" text="Exit" textFill="#f41c1c">
          <font>
             <Font name="Britannic Bold" size="24.0" />
          </font>
       </Button>
-      <Label layoutX="329.0" layoutY="182.0" text="Score">
+      <Label layoutX="353.0" layoutY="199.0" text="Score :" textFill="#130404">
          <font>
-            <Font size="49.0" />
+            <Font name="Britannic Bold" size="49.0" />
          </font>
       </Label>
-      <Label fx:id="score" layoutX="565.0" layoutY="187.0">
+      <Label fx:id="score" layoutX="512.0" layoutY="181.0" prefHeight="90.0" prefWidth="74.0">
          <font>
-            <Font size="40.0" />
+            <Font size="62.0" />
+         </font>
+      </Label>
+      <Label fx:id="playerName" layoutX="425.0" layoutY="91.0" text="Label">
+         <font>
+            <Font name="System Bold" size="61.0" />
          </font>
       </Label>
    </children>

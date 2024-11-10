@@ -2,6 +2,7 @@ package com.example.shuffletrouble;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -127,7 +128,7 @@ public class GameController implements Initializable {
     Timer timer = new Timer(6);
 
     Timeline timeline = new Timeline(
-            new KeyFrame(Duration.seconds(1) ,
+            new KeyFrame(Duration.millis(700) ,
                         e -> {
                                 timer.onSecondPassed();
 
@@ -347,22 +348,22 @@ public class GameController implements Initializable {
 
 
         //translate for shuffle
-//        TranslateTransition translate1 = new TranslateTransition();
-//        translate1.setNode(shuffle);
-//        translate1.setDuration(Duration.millis(300));
-//        translate1.setCycleCount(TranslateTransition.INDEFINITE);
-//        translate1.setByX(5);
-//        translate1.setAutoReverse(true);
-//        translate1.play();
-//
-//        //translate for trouble
-//        TranslateTransition translate2= new TranslateTransition();
-//        translate2.setNode(trouble);
-//        translate2.setDuration(Duration.millis(300));
-//        translate2.setCycleCount(TranslateTransition.INDEFINITE);
-//        translate2.setByY(5);
-//        translate2.setAutoReverse(true);
-//        translate2.play();
+        TranslateTransition translate1 = new TranslateTransition();
+        translate1.setNode(shuffle);
+        translate1.setDuration(Duration.millis(300));
+        translate1.setCycleCount(TranslateTransition.INDEFINITE);
+        translate1.setByX(5);
+        translate1.setAutoReverse(true);
+        translate1.play();
+
+        //translate for trouble
+        TranslateTransition translate2= new TranslateTransition();
+        translate2.setNode(trouble);
+        translate2.setDuration(Duration.millis(300));
+        translate2.setCycleCount(TranslateTransition.INDEFINITE);
+        translate2.setByY(5);
+        translate2.setAutoReverse(true);
+        translate2.play();
 
 
 
@@ -380,6 +381,7 @@ public class GameController implements Initializable {
 
             GameController2 gameController2 = loader.getController();
             gameController2.setQuestionCards(ansCards);
+            gameController2.displayNameInScore(nameLabel);
 
 
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -395,10 +397,9 @@ public class GameController implements Initializable {
 
     }
 
-    @FXML
-    Label namelabel;
-    public void setToscoreScene(String username){
-        namelabel.setText(username);
+    String nameLabel;
+    public  void playerName(String username){
+        nameLabel = username;
     }
 
 

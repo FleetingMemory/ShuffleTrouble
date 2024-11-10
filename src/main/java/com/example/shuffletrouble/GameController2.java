@@ -1,17 +1,27 @@
 package com.example.shuffletrouble;
 
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class GameController2 {
+public class GameController2 implements Initializable {
+    @FXML
+    private ImageView shuffle;
+    @FXML
+    private ImageView trouble;
     @FXML
     private TextField inputField1;  // For Card 1 input
     @FXML
@@ -92,17 +102,11 @@ public class GameController2 {
             ScoreCal scoreCal = loader.getController();
             scoreCal.setAnswerCards(answerCards);
 
-
-//            ArrayList<String> qq = new ArrayList<>();
-//            answerCards.add(ques.get(0));
-//            answerCards.add(ques.get(1));
-//            answerCards.add(ques.get(2));
-//            answerCards.add(ques.get(3));
-
             System.out.println("to score"+ques);
 
-
+            //Data transmitted to Score Scene
             scoreCal.scoreController(answerCards , ques);
+            scoreCal.displayUsername(name);
 
 
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
@@ -129,5 +133,30 @@ public class GameController2 {
         alert.showAndWait();
     }
 
+    String name;
+    public void displayNameInScore(String username){
+        name = username;
 
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        //translate for shuffle
+        TranslateTransition translate1 = new TranslateTransition();
+        translate1.setNode(shuffle);
+        translate1.setDuration(Duration.millis(300));
+        translate1.setCycleCount(TranslateTransition.INDEFINITE);
+        translate1.setByX(5);
+        translate1.setAutoReverse(true);
+        translate1.play();
+
+        //translate for trouble
+        TranslateTransition translate2= new TranslateTransition();
+        translate2.setNode(trouble);
+        translate2.setDuration(Duration.millis(300));
+        translate2.setCycleCount(TranslateTransition.INDEFINITE);
+        translate2.setByY(5);
+        translate2.setAutoReverse(true);
+        translate2.play();
+    }
 }
