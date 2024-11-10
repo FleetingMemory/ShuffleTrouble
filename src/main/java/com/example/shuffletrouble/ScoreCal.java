@@ -15,6 +15,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ScoreCal {
@@ -79,20 +80,21 @@ public class ScoreCal {
         }
     }
 
-    public int scoreController(ArrayList<String> answerCards) throws IOException {
-        int score = 0;
-        setQuestionCards();
+    public void scoreController(ArrayList<String> answerCards , ArrayList<String> quesCards) {
+        int count = 0;
         for (int i = 0; i < 4; i++){
-            if(quesCards.get(i) == answerCards.get(i)){
-                score += 10;
+            System.out.println(quesCards.get(i));
+            System.out.println(answerCards.get(i));
+            if(Objects.equals(quesCards.get(i), answerCards.get(i))){
+                count += 10;
             }
-            else if(quesCards.get(i) != answerCards.get(i)){
-                score -= 2;
+            if(!Objects.equals(quesCards.get(i), answerCards.get(i))){
+                count -= 2;
             }
         }
 
 
-        return score;
+        score.setText(Integer.toString(count));
 
     }
 }

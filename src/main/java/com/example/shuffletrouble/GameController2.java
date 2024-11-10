@@ -44,10 +44,10 @@ public class GameController2 {
         // Get the values entered in the text fields
 
 
-        String card1input = inputField1.getText().toString();
-        String card2input = inputField2.getText().toString();
-        String card3input = inputField3.getText().toString();
-        String card4input = inputField4.getText().toString();
+        String card1input = inputField1.getText();
+        String card2input = inputField2.getText();
+        String card3input = inputField3.getText();
+        String card4input = inputField4.getText();
 
 
         // Validate each input
@@ -77,7 +77,7 @@ public class GameController2 {
         // If all inputs are valid, proceed with your game logic
         // You can perform any action here, e.g., updating game state, changing scene, etc.
         System.out.println("All cards are valid. Proceeding with the game...");
-        System.out.println("ans->"+ques);
+        System.out.println("ques in game 2->"+ques);
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ScoreScene.fxml"));
@@ -92,16 +92,17 @@ public class GameController2 {
             ScoreCal scoreCal = loader.getController();
             scoreCal.setAnswerCards(answerCards);
 
+
 //            ArrayList<String> qq = new ArrayList<>();
 //            answerCards.add(ques.get(0));
 //            answerCards.add(ques.get(1));
 //            answerCards.add(ques.get(2));
 //            answerCards.add(ques.get(3));
 
-//            System.out.println(ques);
+            System.out.println("to score"+ques);
 
 
-            scoreCal.scoreController(answerCards);
+            scoreCal.scoreController(answerCards , ques);
 
 
             Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
