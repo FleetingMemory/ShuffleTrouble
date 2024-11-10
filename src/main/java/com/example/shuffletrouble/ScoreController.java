@@ -33,22 +33,24 @@ public class ScoreController  implements Initializable {
     private ImageView trouble;
     @FXML
     private Label playerName;
+    @FXML
+    private Label score;
 
     public String username = " ";
 
-//    public void getPlayerName(String playerName){
-//        username =  playerName;
-//        public void getPlayerName(String userName){
-//            username =  userName;
-//            System.out.print(username);
-//        }
-
-        // Function to direct player to Main screen
 
         ArrayList<String> quesCards;
+        ArrayList<String> answerCards;
+
         public void setQuestionCards(ArrayList<String> ques){
             quesCards = ques;
             System.out.print(quesCards);
+        }
+
+        public void setAnswerCards(ArrayList<String> ans){
+            answerCards = ans;
+            System.out.print(answerCards);
+
         }
         public void switchToMain(ActionEvent event) {
             try {
@@ -76,8 +78,29 @@ public class ScoreController  implements Initializable {
             }
         }
 
+        public int scoreController(ArrayList<String> answerCards, ArrayList<String> quesCards){
+            int score = 0;
+            for (int i = 0; i < 4; i++){
+                if(answerCards.get(i) == answerCards.get(i)){
+                    score += 10;
+                }
+                else if(answerCards.get(i) != answerCards.get(i)){
+                    score -= 2;
+                }
+            }
+
+
+            return score;
+
+        }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        int sc = scoreController(quesCards , answerCards);
+        String s = Integer.toString(sc);
+        score.setText(s);
+
         //translate for shuffle
         TranslateTransition translate1 = new TranslateTransition();
         translate1.setNode(shuffle);
